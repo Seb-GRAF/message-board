@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+    <section class="log-in">
+      <h1>Create a new message</h1>
+      <form action="" method="POST">
+        <div class="form-field">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+        <div class="form-buttons">
+          <button>Submit</button>
+        </div>
+      </form>
+    </section>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

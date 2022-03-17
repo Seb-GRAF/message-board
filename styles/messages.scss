@@ -1,0 +1,25 @@
+.messages {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    li {
+      width: 20rem;
+      padding: 1rem;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    .name-and-date {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

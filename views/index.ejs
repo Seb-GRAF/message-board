@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <section>
+      <% if (currentUser) { %>
+      <h2>Welcome back <%= currentUser.username %></h2>
+      <% } else { %>
+      <p>
+        Please
+        <a href="/users/log-in">log in.</a>
+      </p>
+      <% } %>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

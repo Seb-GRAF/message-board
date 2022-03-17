@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+    <section class="messages">
+      <h1>All messages</h1>
+      <ul>
+        <% messages.forEach(message => { %>
+        <li>
+          <h3><%= message.title %></h3>
+          <h4><%= message.message %></h4>
+          <div class="name-and-date">
+            <h4>By: <%= message.user.username %></h4>
+            <h4><%= createdAt %></h4>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

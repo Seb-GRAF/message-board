@@ -1,0 +1,37 @@
+{
+  "name": "members-only",
+  "version": "0.0.0",
+  "engines": "16.13.1",
+  "private": true,
+  "scripts": {
+    "sass-watch": "sass --no-source-map --watch styles/main.scss public/stylesheets/main.css",
+    "start": "nodemon ./bin/www --ext*",
+    "all": "npm-run-all --parallel sass-watch start"
+  },
+  "dependencies": {
+    "async": "^3.2.3",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-livereload": "^0.6.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "http-errors": "~1.6.3",
+    "livereload": "^0.9.3",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.7",
+    "morgan": "~1.9.1",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "passport": "^0.5.2",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "sass": "^1.49.9"
+  }
+}

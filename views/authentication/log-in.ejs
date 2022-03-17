@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+    <section class="log-in">
+      <form action="" method="POST">
+        <h1>Log in</h1>
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" />
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="form-buttons">
+          <button>Log in</button>
+          <!-- <button>Log in with Google</button> -->
+        </div>
+      </form>
+    </section>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>
