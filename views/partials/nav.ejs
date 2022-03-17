@@ -1,16 +1,18 @@
 <nav>
   <div class="site-title">
-    <a href="/"><h1>How's the weather?</h1></a>
+    <a href="/"><h1>H<b>●</b>w's the weather?</h1></a>
   </div>
   <ul>
-    <% if (currentUser) { %> <% if (currentUser.admin) { %>
-    <li>Admin mode</li>
-    <% } %>
+    <% if (currentUser) { %>
     <li><a class="new-message" href="/messages/create">New message</a></li>
-    <li><a class="log-out" href="/users/log-out">Log out</a></li>
+    <li><button class="log-out"><a href="/users/log-out">Log out</a></butto></li>
     <% } else { %>
-    <li><a class="sign-up" href="/users/sign-up">Sign up</a></li>
-    <li><a class="log-in" href="/users/log-in">Log in</a></li>
+    <li>
+      <a class="sign-up" href="/users/sign-up">Sign up</a>
+    </li>
+    <li>
+      <button class="log-in"><a href="/users/log-in">Log in</a></button>
+    </li>
     <% } %>
   </ul>
 </nav>

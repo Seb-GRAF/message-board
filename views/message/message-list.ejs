@@ -11,7 +11,13 @@
           <h3><%= message.title %></h3>
           <h4><%= message.message %></h4>
           <div class="name-and-date">
+            <% if (currentUser) { %>
             <h4>By: <%= message.user.username %></h4>
+            <% } else { %>
+            <h4>
+              By: <a href="/users/log-in"><mark>Log in to see</mark></a>
+            </h4>
+            <% } %>
             <h4><%= createdAt %></h4>
           </div>
         </li>

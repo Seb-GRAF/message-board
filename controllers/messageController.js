@@ -35,8 +35,12 @@ exports.list_all = (req, res, next) => {
       // on success
       res.render('./message/message-list', {
         messages: results.messages,
-        createdAt: moment(results.messages.createdAt).format('D MMMM YYYY'),
-        updatedAt: moment(results.messages.updatedAt).format('D MMMM YYYY'),
+        createdAt: moment(results.messages.createdAt).format(
+          'D MMMM YYYY, hh:mm'
+        ),
+        updatedAt: moment(results.messages.updatedAt).format(
+          'D MMMM YYYY, hh:mm'
+        ),
         title: 'All messages',
       });
     }

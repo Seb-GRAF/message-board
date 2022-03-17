@@ -8,19 +8,55 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+nav b {
+  color: #ffc400;
+  -webkit-text-stroke-width: 0.22rem;
+  -webkit-text-stroke-color: black;
+}
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 nav ul a {
   text-decoration: none;
+  transition: color 500ms cubic-bezier(0.495, 0.18, 0, 1);
 }
 nav ul .log-in,
 nav ul .log-out {
+  z-index: 1;
+  position: relative;
   padding: 0.4em 1em;
+  font-size: 1rem;
   border-radius: 1em;
   border: solid black 1px;
+  overflow: hidden;
+}
+nav ul .log-in:after,
+nav ul .log-out:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background-color: black;
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 500ms cubic-bezier(0.495, 0.18, 0, 1);
+  transition-timing-function: cubic-bezier(0.495, 0.18, 0, 1);
+}
+nav ul .log-in:hover a,
+nav ul .log-out:hover a {
+  color: white;
+}
+nav ul .log-in:hover:after,
+nav ul .log-out:hover:after {
+  background-position: right;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 footer {
@@ -28,6 +64,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.8rem;
 }
 
 .messages ul {
@@ -39,19 +76,33 @@ footer {
   list-style: none;
 }
 .messages ul li {
-  width: 20rem;
-  padding: 1rem;
+  width: 100%;
+  max-width: 25rem;
+  padding: 1rem 2rem;
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  box-shadow: 0px 5px 15px #0000001c;
+  transition: box-shadow 500ms cubic-bezier(0.495, 0.18, 0, 1);
+}
+.messages ul li:hover {
+  box-shadow: 0px 5px 15px #00000041;
+}
+.messages ul h3 {
+  font-weight: 500;
+  border-bottom: solid 1px black;
+  padding-bottom: 0.5rem;
+}
+.messages ul h4 {
+  font-weight: 400;
 }
 .messages ul .name-and-date {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  font-size: 0.8em;
+  margin-top: 1rem;
 }
 
 html {
@@ -87,6 +138,7 @@ section {
   gap: 1rem;
   margin: 0;
   padding: 0;
+  padding: 2rem 1rem;
 }
 
 form {
@@ -98,6 +150,10 @@ form {
   width: 100%;
   padding: 2rem;
   max-width: 20rem;
+  box-shadow: 0px 5px 15px #0000001c;
+}
+form h1 {
+  text-align: center;
 }
 form .form-field {
   display: flex;
@@ -106,18 +162,38 @@ form .form-field {
 }
 form .form-field input,
 form .form-field textarea {
-  height: 1.5rem;
+  height: 2rem;
+  padding: 0.5rem;
+  padding-top: 0.7rem;
   border: solid 1px black;
   border-radius: 0;
   outline: none;
 }
+form .form-field textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+form .form-field label {
+  transform: translate(0.5rem, 0.6rem);
+  background-color: white;
+  width: fit-content;
+  padding: 0 0.5rem;
+}
 form button {
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
   font-size: 1rem;
   padding: 0.8em 1.5em;
   border-radius: 2em;
   border: none;
-  background-color: #ff6b00;
+  background-color: #ffc400;
   font-weight: 600;
+  overflow: hidden;
+  transition: box-shadow 500ms cubic-bezier(0.495, 0.18, 0, 1);
+}
+form button:hover {
+  box-shadow: 0 2px 10px #00000013;
 }
 
 a {
