@@ -7,6 +7,10 @@ const message_controller = require('../controllers/messageController');
 router.get('/create', message_controller.create_get);
 router.post('/create', message_controller.create_post);
 
+/// EDIT ///
+router.get('/:id/edit', message_controller.edit_get);
+router.post('/:id/edit', message_controller.edit_post);
+
 /// LIST ///
 router.get('/', message_controller.list_all);
 module.exports = router;

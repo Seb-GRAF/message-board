@@ -66,6 +66,9 @@ footer {
   align-items: center;
   padding: 0.8rem;
 }
+footer a {
+  text-decoration: underline solid 1px black;
+}
 
 .messages ul {
   display: flex;
@@ -83,11 +86,18 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 0px 5px 15px #0000001c;
+  box-shadow: 0px 5px 15px #0000000a;
   transition: box-shadow 500ms cubic-bezier(0.495, 0.18, 0, 1);
 }
 .messages ul li:hover {
-  box-shadow: 0px 5px 15px #00000041;
+  box-shadow: 0px 5px 15px #0000002c;
+}
+.messages ul li mark {
+  padding: 0.1rem 0.4rem;
+  background-color: #ffc40052;
+}
+.messages ul li mark:hover {
+  background-color: #ffc40083;
 }
 .messages ul h3 {
   font-weight: 500;
@@ -102,7 +112,7 @@ footer {
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 html {
@@ -148,8 +158,8 @@ form {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 2rem;
   max-width: 20rem;
+  padding: 2rem;
   box-shadow: 0px 5px 15px #0000001c;
 }
 form h1 {
@@ -169,15 +179,30 @@ form .form-field textarea {
   border-radius: 0;
   outline: none;
 }
+form .form-field input:focus,
+form .form-field textarea:focus {
+  border: #070707 solid 2px;
+}
 form .form-field textarea {
   resize: vertical;
-  min-height: 6rem;
+  min-height: 10rem;
+  max-height: 20rem;
 }
 form .form-field label {
   transform: translate(0.5rem, 0.6rem);
   background-color: white;
   width: fit-content;
   padding: 0 0.5rem;
+}
+form p.wrong {
+  color: #b82500;
+}
+form .form-buttons {
+  margin-top: 1rem;
+}
+form .error {
+  text-justify: inter-word;
+  font-size: 0.8rem;
 }
 form button {
   cursor: pointer;
@@ -194,6 +219,10 @@ form button {
 }
 form button:hover {
   box-shadow: 0 2px 10px #00000013;
+}
+
+.message-form form {
+  max-width: 25rem;
 }
 
 a {

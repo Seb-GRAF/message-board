@@ -7,24 +7,69 @@
       <form action="" method="POST">
         <h1>Sign up</h1>
         <div class="form-field">
-          <label for="first_name">First name</label>
-          <input type="text" name="first_name" id="first_name" />
+          <label for="first_name">First name*</label>
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            value="<%= locals.first_name ? `${locals.first_name}` : '' %>"
+          />
+          <% if (locals.errors) { %> <% locals.errors.forEach(error => { %> <%
+          if (error.param === "first_name") { %>
+          <p class="error wrong"><%= error.msg %></p>
+          <% } %> <% }) %> <% } %>
         </div>
 
         <div class="form-field">
-          <label for="last_name">Last name</label>
-          <input type="text" name="last_name" id="last_name" />
+          <label for="last_name">Last name*</label>
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            value="<%= locals.last_name ? `${locals.last_name}` : '' %>"
+          />
+          <% if (locals.errors) { %> <% locals.errors.forEach(error => { %> <%
+          if (error.param === "last_name") { %>
+          <p class="error wrong"><%= error.msg %></p>
+          <% } %> <% }) %> <% } %>
         </div>
 
         <div class="form-field">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" />
+          <label for="username">Username*</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value="<%= locals.username ? `${locals.username}` : '' %>"
+          />
+          <% if (locals.errors) { %> <% locals.errors.forEach(error => { %> <%
+          if (error.param === "username") { %>
+          <p class="error wrong"><%= error.msg %></p>
+          <% } %> <% }) %> <% } %>
         </div>
 
         <div class="form-field">
-          <label for="password">Password</label>
+          <label for="password">Password*</label>
           <input type="password" name="password" id="password" />
+          <% if (locals.errors) { %> <% locals.errors.forEach(error => { %> <%
+          if (error.param === "password") { %>
+          <p class="error wrong"><%= error.msg %></p>
+          <% } %> <% }) %> <% } %>
         </div>
+
+        <div class="form-field">
+          <label for="confirm_password">Confirm password*</label>
+          <input
+            type="password"
+            name="confirm_password"
+            id="confirm_password"
+          />
+          <% if (locals.errors) { %> <% locals.errors.forEach(error => { %> <%
+          if (error.param === "confirm_password") { %>
+          <p class="error wrong"><%= error.msg %></p>
+          <% } %> <% }) %> <% } %>
+        </div>
+
         <div class="form-buttons">
           <button>Sign up</button>
         </div>

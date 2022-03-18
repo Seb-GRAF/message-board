@@ -18,7 +18,12 @@
               By: <a href="/users/log-in"><mark>Log in to see</mark></a>
             </h4>
             <% } %>
-            <h4><%= createdAt %></h4>
+            <h4><%= message.createdAt %></h4>
+          </div>
+          <div class="admin-controls">
+            <% if (currentUser) { %> <% if (currentUser.admin) { %>
+            <a href="/messages/<%= message._id %>/edit">Edit</a>
+            <% } %> <% } %>
           </div>
         </li>
         <% }) %>

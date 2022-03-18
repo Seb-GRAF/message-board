@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "sass-watch": "sass --no-source-map --watch styles/main.scss public/stylesheets/main.css",
-    "start": "nodemon ./bin/www --ext*",
+    "start": "nodemon ./bin/www",
     "all": "npm-run-all --parallel sass-watch start"
   },
   "dependencies": {

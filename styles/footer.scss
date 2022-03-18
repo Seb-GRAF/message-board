@@ -4,4 +4,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0.8rem;
+  a {
+    text-decoration: underline solid 1px black;
+  }
 }
