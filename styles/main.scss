@@ -83,6 +83,13 @@ form {
   }
   .form-buttons {
     margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .cancel {
+      font-size: 1rem;
+      padding: 0.8em 1.5em;
+    }
   }
   .error {
     text-justify: inter-word;

@@ -70,7 +70,8 @@ footer a {
   text-decoration: underline solid 1px black;
 }
 
-.messages ul {
+.messages ul,
+.message-delete ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,7 +79,8 @@ footer a {
   gap: 1rem;
   list-style: none;
 }
-.messages ul li {
+.messages ul li,
+.message-delete ul li {
   width: 100%;
   max-width: 25rem;
   padding: 1rem 2rem;
@@ -89,30 +91,59 @@ footer a {
   box-shadow: 0px 5px 15px #0000000a;
   transition: box-shadow 500ms cubic-bezier(0.495, 0.18, 0, 1);
 }
-.messages ul li:hover {
+.messages ul li:hover,
+.message-delete ul li:hover {
   box-shadow: 0px 5px 15px #0000002c;
 }
-.messages ul li mark {
+.messages ul li mark,
+.message-delete ul li mark {
   padding: 0.1rem 0.4rem;
   background-color: #ffc40052;
 }
-.messages ul li mark:hover {
+.messages ul li mark:hover,
+.message-delete ul li mark:hover {
   background-color: #ffc40083;
 }
-.messages ul h3 {
-  font-weight: 500;
+.messages ul .message-title,
+.message-delete ul .message-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   border-bottom: solid 1px black;
   padding-bottom: 0.5rem;
 }
-.messages ul h4 {
+.messages ul .message-title h3,
+.message-delete ul .message-title h3 {
+  font-weight: 500;
+}
+.messages ul .message-title .admin-controls,
+.message-delete ul .message-title .admin-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+.messages ul .message-title .admin-controls a,
+.message-delete ul .message-title .admin-controls a {
+  font-weight: 200;
+}
+.messages ul h4,
+.message-delete ul h4 {
   font-weight: 400;
 }
-.messages ul .name-and-date {
+.messages ul .name-and-date,
+.message-delete ul .name-and-date {
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+.message-delete ul li {
+  box-shadow: none;
+  border: solid 1px black;
+}
+.message-delete ul li:hover {
+  box-shadow: none;
 }
 
 html {
@@ -199,6 +230,13 @@ form p.wrong {
 }
 form .form-buttons {
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+form .form-buttons .cancel {
+  font-size: 1rem;
+  padding: 0.8em 1.5em;
 }
 form .error {
   text-justify: inter-word;

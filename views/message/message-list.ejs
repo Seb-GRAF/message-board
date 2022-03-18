@@ -4,11 +4,20 @@
   <body>
     <%- include('../partials/nav.ejs') %>
     <section class="messages">
-      <h1>All messages</h1>
+      <h1>So... Is it sunny over there?</h1>
       <ul>
         <% messages.forEach(message => { %>
         <li>
-          <h3><%= message.title %></h3>
+          <div class="message-title">
+            <h3><%= message.title %></h3>
+            <div class="admin-controls">
+              <% if (currentUser) { %> <% if (currentUser.admin ||
+              `${currentUser._id}` === `${message.user._id}`) { %>
+              <a href="/messages/<%= message._id %>/edit">Edit</a>
+              <a href="/messages/<%= message._id %>/delete">Delete</a>
+              <% } %> <% } %>
+            </div>
+          </div>
           <h4><%= message.message %></h4>
           <div class="name-and-date">
             <% if (currentUser) { %>
@@ -18,12 +27,7 @@
               By: <a href="/users/log-in"><mark>Log in to see</mark></a>
             </h4>
             <% } %>
-            <h4><%= message.createdAt %></h4>
-          </div>
-          <div class="admin-controls">
-            <% if (currentUser) { %> <% if (currentUser.admin) { %>
-            <a href="/messages/<%= message._id %>/edit">Edit</a>
-            <% } %> <% } %>
+            <h4><%= message.date %></h4>
           </div>
         </li>
         <% }) %>
