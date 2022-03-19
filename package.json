@@ -1,7 +1,9 @@
 {
   "name": "members-only",
   "version": "0.0.0",
-  "engines": "16.13.1",
+  "engines": {
+    "node": "16.13.1"
+  },
   "private": true,
   "scripts": {
     "sass-watch": "sass --no-source-map --watch styles/main.scss public/stylesheets/main.css",
